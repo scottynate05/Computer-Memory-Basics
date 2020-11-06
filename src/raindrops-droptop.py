@@ -20,3 +20,12 @@
 
 # [output] string
 
+def csRaindrops(number):
+    if number % 3 == 0:
+        return 'Pling'
+    elif number % 5 == 0:
+        return 'Plang'
+    elif number % 7 == 0:
+        return 'Plong'
+    else:
+        return str(number)
