@@ -23,16 +23,5 @@
 
 # [output] string
 
-import binascii
-
 def csBinaryToASCII(binary):
-    # ba = bytearray(binary)
-    # return bin(ba[0])[2:]
-    # n = bin(binary)
-    n = int(binary, 2)
-    n.to_bytes((n.bit_length() + 7) // 8, 'big').decode()
-    binascii.unhexlify('%x' % n)
-    # n = str(binary)
-    return n
-    # data = binascii.b2a_uu(int(binary, 2))
-    # return bin(data)[2:]
+    return ''.join(chr(int(binary[i * 8: i * 8 + 8], 2)) for i in range(len(binary)//8))
