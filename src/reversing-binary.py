@@ -14,3 +14,8 @@
 # [input] integer n
 
 # [output] integer
+
+def csReverseIntegerBits(n):
+    bin_str = bin(n)[::-1]
+    dec_str = bin_str.replace('b', '')
+    return int(dec_str, 2) / 2
